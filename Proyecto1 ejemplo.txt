@@ -1,0 +1,45 @@
+
+Inicio
+  Leer precio_original
+	precio_original="$150"
+  Leer porcentaje_descuento
+	porcentaje_descuento="10%"
+  Leer cantidad_productos
+	cantidad_productos:2
+  Leer peso_paquete
+	peso_paquete:5kg
+  Leer destino_envio
+	destino_envio:"Local"
+  
+  precio_con_descuento = $150 - (1 * 0.10) //= $135
+
+  
+  impuesto = 0.15 * $135 //=155.25
+
+descuento_por_cantidad = 0
+Si cantidad_productos > 1 entonces
+    descuento_por_cantidad = 0.05 * precio_con_descuento
+//$147.48
+  
+  
+  
+  costo_envio = 0
+  Si peso_paquete => 10 kg entonces
+	costo_peso = 0 
+	SiNo
+    	costo_peso = 5
+
+    Si destino_envio == "local" entonces
+      costo_envio = 0
+    SiNo
+      costo_envio = 10
+ 
+  
+  costo_final = $147.48
+  
+  Mostrar "Precio con descuento:"$135
+  Mostrar "Impuesto:":0.15%
+  Mostrar "Descuento por cantidad:":0.05%
+  Mostrar "Costo de envío:":$0
+  Mostrar "Costo final:"$147.48
+Fin

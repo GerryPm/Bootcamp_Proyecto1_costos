@@ -1,0 +1,32 @@
+Inicio
+  Leer precio_original
+  Leer porcentaje_descuento
+  Leer cantidad_productos
+  Leer peso_paquete
+  Leer destino_envio
+  
+  precio_con_descuento = precio_original - (precio_original * porcentaje_descuento)
+  
+  impuesto = 0.15 * precio_con_descuento
+  
+  descuento_por_cantidad = 0
+  Si cantidad_productos > 1 entonces
+    descuento_por_cantidad = 0.05 * precio_con_descuento
+  
+  costo_envio = 0
+  Si peso_paquete > 10 kg entonces
+    Si destino_envio == "local" entonces
+      costo_envio = 5
+    SiNo
+      costo_envio = 10
+  SiNo
+    costo_envio = 0
+  
+  costo_final = precio_con_descuento + impuesto - descuento_por_cantidad + costo_envio
+  
+  Mostrar "Precio con descuento:", precio_con_descuento
+  Mostrar "Impuesto:", impuesto
+  Mostrar "Descuento por cantidad:", descuento_por_cantidad
+  Mostrar "Costo de envío:", costo_envio
+  Mostrar "Costo final:", costo_final
+Fin
